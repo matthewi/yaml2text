@@ -16,4 +16,4 @@
 
 # release executable
 cmd/yaml2text/yaml2text
-pkg/
+dist/
