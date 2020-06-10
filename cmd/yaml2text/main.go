@@ -9,6 +9,11 @@ import (
 	"github.com/mashiike/yaml2text"
 )
 
+var (
+	version   string
+	buildDate string
+)
+
 func main() {
 	var (
 		templateFile string
@@ -36,6 +41,8 @@ func newFlagSet() *flag.FlagSet {
 	f.Usage = func() {
 		fmt.Fprintf(f.Output(), "Usage: %s [-template <path>] <yaml path>\n\n", f.Name())
 		fmt.Fprintln(f.Output(), "This is a yaml convertor with go template format.")
+		fmt.Fprintln(f.Output(), "version:", version)
+		fmt.Fprintln(f.Output(), "build:", buildDate)
 		fmt.Fprintln(f.Output(), "")
 		f.PrintDefaults()
 	}

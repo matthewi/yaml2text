@@ -13,3 +13,7 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# release executable
+cmd/yaml2text/yaml2text
+pkg/
