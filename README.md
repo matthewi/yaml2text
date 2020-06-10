@@ -49,7 +49,7 @@ It is convenient to use Makefile and shell redirection together.
 ### Homebrew (macOS only)
 
 ```
-$ brew install mashiike/tap/mysqlbatch
+$ brew install mashiike/tap/yaml2text
 ```
 
 
