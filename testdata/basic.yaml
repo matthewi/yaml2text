@@ -1,0 +1,9 @@
+fields:
+  - name: hoge
+    sql: COALESCE(SUM(hoge), 0)
+  - name: fuga
+    sql: ARRAY_AGG(fuga)
+  - name: piyo
+    sql: AVG(piyo)
+
+table: yamlyaml
