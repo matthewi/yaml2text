@@ -4,6 +4,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+        "github.com/Masterminds/sprig/v3"
 	"text/template"
 
 	"github.com/pkg/errors"
@@ -21,12 +22,12 @@ func New(pattern io.Reader) (*App, error) {
 	if err != nil {
 		return nil, errors.Wrap(err, "template read")
 	}
-	funcMap := template.FuncMap{
-		"add": func(a, b int) int { return a + b },
-		"sub": func(a, b int) int { return a - b },
-		"mul": func(a, b int) int { return a * b },
-		"div": func(a, b int) int { return a / b },
-	}
+	funcMap := sprig.TxtFuncMap() // template.FuncMap{
+//		"add": func(a, b int) int { return a + b },
+//		"sub": func(a, b int) int { return a - b },
+//		"mul": func(a, b int) int { return a * b },
+//		"div": func(a, b int) int { return a / b },
+//	}
 	t, err := template.New("yaml2text").Funcs(funcMap).Parse(string(bs))
 	if err != nil {
 		return nil, errors.Wrap(err, "template parse")
